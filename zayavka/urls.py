@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from dairy import views
+from magazin import views
+from moderator import views
+from mounter import views
+from payment import views
+from registr import views
+from registration import views
+from service import views
+from specialist import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]

@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.http import HttpResopnse
 
-# Create your views here.
+def index(index):
+    return HttpResopnse('Diary apps.')

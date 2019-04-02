@@ -37,6 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dairy',
+    'magazin',
+    'moderator',
+    'mounter',
+    'payment',
+    'registr',
+    'registration',
+    'service',
+    'specialis',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +84,12 @@ WSGI_APPLICATION = 'zayavka.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.path.join(BASE_DIR, 'mydatabases'),
+        'USER': 'VetalMart',
+        'PASSWORD': '111111',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
