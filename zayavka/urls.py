@@ -14,18 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf.urls import include
+from django.conf.urls import url
 
-from dairy import views
-from magazin import views
-from moderator import views
-from mounter import views
-from payment import views
-from registr import views
-from registration import views
-from service import views
-from specialist import views
+import dairy
+import magazin
+import moderator
+import mounter
+import payment
+import registr
+import registration
+import service
+import specialist
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^$', registration.views.index, name='index'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^dairy/', include('dairy.urls')),
+    url(r'^magazin/', include('magazin.urls')),
+    url(r'^moderator/', include('moderator.urls')),
+    url(r'^mounter/', include('mounter.urls')),
+    url(r'^payment/', include('payment.urls')),
+    url(r'^registr/', include('registr.urls')),
+    url(r'^registration/', include('registration.urls')),
+    url(r'^service/', include('service.urls')),
+    url(r'^specialist/', include('specialist.urls')),
 ]
